@@ -1,4 +1,4 @@
 <?php
-class Alimentation extends piece {
-    public function call(): string
+class Alimentation extends Piece {
+    protected ?int $puissance;
 }

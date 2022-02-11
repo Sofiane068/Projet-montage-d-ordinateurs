@@ -1,9 +1,9 @@
 
 
 <?php
-class Cartemere extends piece {
-    protected ?boolean $Socket;
-    protected ?string $Format;
+class Cartemere extends Piece {
+    protected ?boolean $socket;
+    protected ?string $format;
     
    
 }

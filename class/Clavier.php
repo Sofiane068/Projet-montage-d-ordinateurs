@@ -1,4 +1,6 @@
 <?php
-class Clavier extends piece {
-    public function call(): string
+class Clavier extends Piece {
+    protected ?boolean $sansFil;
+    protected ?boolean $paveNum;
+    protected ?string $typeTouche;
 }

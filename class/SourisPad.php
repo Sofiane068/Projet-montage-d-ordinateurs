@@ -1,4 +1,5 @@
 <?php
-class SourisPad extends piece {
-    public function call(): string
+class SourisPad extends Piece {
+    protected ?boolean $sansFil;
+    protected ?int $nombreDeTouches;
 }

@@ -1,4 +1,6 @@
 <?php
-class Cartegraphique extends piece {
-    public function call(): string
+class CarteGraphique extends Piece {
+    protected ?float $mémoire;
+    protected ?boolean $chipset;
+  
 }
