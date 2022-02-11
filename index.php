@@ -2,6 +2,14 @@
 require_once 'header.php';
 ?>
 
+<?php 
+if( isset($_POST['key']) && isset($_POST['email']) && strpos($_POST['email'], 'concepteur@cldl.com') && $_POST['key']=== $mpConcepteur){
+    header("Location: concepteur.php");
+}elseif(isset($_POST['key']) && isset($_POST['email']) && strpos($_POST['email'], 'monteur@cldl.com') && $_POST['key'] === $mpMonteur){
+    header("Location: monteur.php");
+}
+?>
+
 
 
 <section id="login">
