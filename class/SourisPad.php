@@ -1,5 +1,5 @@
 <?php
 class SourisPad extends Piece {
-    protected ?boolean $sansFil;
+    protected ?bool $sansFil;
     protected ?int $nombreDeTouches;
 }

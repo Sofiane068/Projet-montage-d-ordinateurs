@@ -9,8 +9,8 @@ abstract class Piece
    protected ?string $marque;
    protected ?float $quantité;
    protected ?float $ndDeModèleCrée;
-   protected ?date $dateAjout;
-   protected ?boolean $compatiblePortable;
+   protected ?DateTime $dateAjout;
+   protected ?bool $compatiblePortable;
 }
 
 

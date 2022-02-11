@@ -1,10 +1,10 @@
 <?php
 class Commentaire{
-    $date;
-    $texte;
-    $reponse;
+   protected DateTime $date;
+   protected string $texte;
+   protected bool $reponse;
 
-public function __construct(date $date, string $texte, boolean $reponse) 
+public function __construct(DateTime $date, string $texte, bool $reponse) 
     {
         $this->date = $date;
         $this->texte = $texte;
@@ -13,34 +13,34 @@ public function __construct(date $date, string $texte, boolean $reponse)
     }
 ///////////
 public function getdate(){
-    return this->$date;
+    return $this->date;
 }
 
-public function setdate(date $date){
-$this=>date= $date;
-return $this
+public function setdate(DateTime $date){
+$this->date= $date;
+return $this;
 }
 
 ////////////
 public function gettexte(){
-    return this->$texte;
+    return $this->texte;
 }
 
 public function settexte(string $texte){
-$this=>text= $texte;
-return $this
+$this->text= $texte;
+return $this;
 }
 
 /////////////
 
 
 public function getreponse(){
-    return this->$reponse;
+    return $this->reponse;
 }
 
-public function setreponse(boolean $reponse){
-$this=>reponse= $reponse;
-return $this
+public function setreponse(bool $reponse){
+$this->reponse= $reponse;
+return $this;
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 class Processeur extends Piece {
    protected ?float $nombreDeCoeur;
-   protected ?boolean $chipsetCompatibles
+   protected ?bool $chipsetCompatibles;
    protected ?float $frequenceCPU;
 }

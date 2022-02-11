@@ -2,7 +2,7 @@
 
 <?php
 class Cartemere extends Piece {
-    protected ?boolean $socket;
+    protected ?bool $socket;
     protected ?string $format;
     
    
