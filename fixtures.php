@@ -2,6 +2,6 @@
 
 require_once 'includes/db.php';
 
-$sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('concepteur@cldl.com','toto')";
+$sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('monteur@cldl.com','titi')";
 
 $count = $connection->exec($sql);
