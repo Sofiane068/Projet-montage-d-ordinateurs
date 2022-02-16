@@ -1,6 +1,6 @@
 <?php 
 require_once 'includes/variable.php';
-require_once 'includes/db.php';
+require_once 'fixtures.php';
 ?>
 
 <!DOCTYPE html>
