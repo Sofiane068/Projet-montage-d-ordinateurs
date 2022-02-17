@@ -57,6 +57,7 @@ $piece = "INSERT INTO pieces (nom,prix,categorie,marque,quantite,nbDeModeleCreer
 
 
 $modele ="INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archive,quantite) VALUES 
+
 (1,'Asus Monster','Le Asus Monster est le fruit de l'association entre AMD et Asus. Il embarque les processeur et GPU les plus performants d'AMD dans un châssis qui a fait ses preuves',1,20),
 (1,'The Asus Prime','Le Asus prime est un véritable concentré de puissance qui donne vie à vos idées',1,10),
 (0,'Asus C22','Le Asus C22 est l'exemple même de la perfection',0,3),
