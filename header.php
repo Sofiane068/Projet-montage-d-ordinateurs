@@ -1,5 +1,4 @@
 <?php 
-require_once 'includes/variable.php';
 require_once 'fixtures.php';
 ?>
 

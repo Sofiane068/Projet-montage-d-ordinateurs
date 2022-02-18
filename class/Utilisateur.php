@@ -1,14 +1,20 @@
-<?php 
+<?php
 
-class Utilisateur {
+class Utilisateur
+{
 
     protected string  $adresseMail;
     protected string $motDePasse;
 
-    public function __construct(string $adresseMail,string $motDePasse) 
+    public function __construct(string $adresseMail = "", string $motDePasse = "")
     {
-        $this->adresseMail = $adresseMail;
-        $this->motDePasse = $motDePasse;
+        if (!empty($adresseMail)) {
+
+            $this->adresseMail = $adresseMail;
+        }
+        if (!empty($motDePasse)) {
+            $this->motDePasse = $motDePasse;
+        }
     }
 
 
@@ -17,10 +23,10 @@ class Utilisateur {
         return $this->adresseMail;
     }
 
-    
+
     public function setAdresseMail(string $adresseMail)
     {
-        $this->adresseMail= $adresseMail;
+        $this->adresseMail = $adresseMail;
 
         return $this;
     }
@@ -37,9 +43,4 @@ class Utilisateur {
 
         return $this;
     }
-
 }
-
-
-
-
