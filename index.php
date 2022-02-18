@@ -1,13 +1,30 @@
 <?php
 require_once 'header.php';
+require_once 'class/Utilisateur.php'
 ?>
 
-<?php 
-if( isset($_POST['key']) && isset($_POST['email']) && strpos($_POST['email'], 'concepteur@cldl.com') && $_POST['key']=== $mpConcepteur){
-    header("Location: concepteur.php");
-}elseif(isset($_POST['key']) && isset($_POST['email']) && strpos($_POST['email'], 'monteur@cldl.com') && $_POST['key'] === $mpMonteur){
-    header("Location: monteur.php");
+<?php
+$sth = $connection->prepare("SELECT * FROM utilisateur WHERE adresseMail = :id AND motDePasse = :mp");
+if (isset($_POST['email']) && isset($_POST['key'])) {
+    $sth->bindValue(':id', $_POST['email']);
+    $sth->bindValue(':mp', $_POST['key']);
+    $sth->setFetchMode(PDO::FETCH_CLASS, Utilisateur::class);
+    $sth->execute();
+
+    $utilisateur = $sth->fetch();
+
+    if ($utilisateur == null) {
+        echo 'email invalide';
+        
+    }elseif ($utilisateur->getAddresseMail() == 'concepteur@cldl.com' && $utilisateur !== null) {
+        header("Location: concepteur.php");
+    } elseif ($utilisateur->getAddresseMail() == 'monteur@cldl.com' && $utilisateur !== null) {
+        header("Location: monteur.php");
+    }
+
+ 
 }
+
 ?>
 
 
@@ -33,9 +50,9 @@ if( isset($_POST['key']) && isset($_POST['email']) && strpos($_POST['email'], 'c
                     </form>
                     <hr>
                 </div>
-            </div> <!-- /.col-xs-12 -->
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
+            </div> 
+        </div> 
+    </div> 
 </section>
 
 
