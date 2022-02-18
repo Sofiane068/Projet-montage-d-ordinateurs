@@ -55,4 +55,17 @@ $piece = "INSERT INTO pieces (nom,prix,categorie,marque,quantite,nbDeModeleCreer
     ('Seagate 8To BARRACUDA 3.5',209.99, 'disque dur/ssd','SEAGATE',2,2,'2021-10-03',0),
     ('Toshiba – Disque dur interne',19.99, 'disque dur/ssd','TOSHIBA',4,2,'2021-02-14',0)";
 
+
+$modele ="INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archive,quantite) VALUES 
+
+(1,'Asus Monster','Le Asus Monster est le fruit de l'association entre AMD et Asus. Il embarque les processeur et GPU les plus performants d'AMD dans un châssis qui a fait ses preuves',1,20),
+(1,'The Asus Prime','Le Asus prime est un véritable concentré de puissance qui donne vie à vos idées',1,10),
+(0,'Asus C22','Le Asus C22 est l'exemple même de la perfection',0,3),
+(0,'Asus X22B','Melangez rapidité et fluidité est obtenez le nouvel Asus X22B',1,5),
+(0,'Sohafa','On ne le presente plus le Sohafa est le pc parfait pour naviguer sur le web',0,7),
+(1,'Hafi36','Le pc le plus leger du monde parfait pour voyager',0,8),
+(1,'Kika','Le pc qui resiste a la chaleur',1,4),
+(1,'Asus Kitty Kat','Les enfants se l'arrache voici le nouveau pc Asus Kitty Kat',0,6),
+(0,'DelRosso','Le DelRosso est petit rapide et puissant',1,10)"; 
+
 $count = $connection->exec($piece);
