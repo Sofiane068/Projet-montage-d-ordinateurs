@@ -2,7 +2,7 @@
 
 require_once 'includes/db.php';
 
-$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur;SET foreign_key_checks = 1;');
+$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur;TRUNCATE modele;SET foreign_key_checks = 1;');
 
 $sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('monteur@cldl.com','titi'),('concepteur@cldl.com','toto')";
 
