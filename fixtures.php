@@ -2,9 +2,13 @@
 
 require_once 'includes/db.php';
 
-$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE commentaire; TRUNCATE modele; SET foreign_key_checks = 1;');
+$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE concepteur; TRUNCATE monteur; TRUNCATE commentaire; TRUNCATE modele; SET foreign_key_checks = 1;');
 
 $sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('monteur@cldl.com','titi'),('concepteur@cldl.com','toto')";
+
+$count = $connection->exec($sql);
+
+$sql = "INSERT INTO monteur (adresseMail) VALUES ('monteur@cldl.com'); INSERT INTO concepteur (adresseMail) VALUES ('concepteur@cldl.com');";
 
 $count = $connection->exec($sql);
 
@@ -73,14 +77,14 @@ $count = $connection->exec($modele);
 
 
 $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseMail,idModele_,adresseMail_1) VALUES 
-('2021-05-21','Tout est fonctionnel !',0,NULL,1,'monteur@cldl.com'),
-('2021-04-13','Le processeur surchauffe beaucoup trop pour les jeux recents !',1,NULL,4,'monteur@cldl.com'),
-('2021-04-14','Merci pour votre retour, nous allons revoir la conception de ce modèle.',0,'concepteur@cldl.com',1,NULL),
-('2021-08-17','Très puissant, tout les jeux tournent parfaitement en 240 fps constant',0,NULL,2,'monteur@cldl.com'),
-('2021-09-18','Prise en main très agreable, très léger comme prévu rien a redire !',0,NULL,6,'monteur@cldl.com'),
-('2021-07-11','Le pc est actuellement HS, je l\'ai utilisé en plein soleil',1,NULL,7,'monteur@cldl.com'),
-('2021-07-12','Merci pour votre retour, Actuellement le pc peut resister jusqu\'à 50 degrès si vous depassez ce seuil cela est normal qu\'il disfonctionne !',0,concepteur@cldl.com,1,NULL),
-('2021-09-21','Jamais vu un pc pareil j\'ai chercher tout les defauts possibles il n\'en a aucun c'est affolant !',0,NULL,3,'monteur@cldl.com'),
-('2021-02-21','Tout est opperationnel !',0,NULL,8,'monteur@cldl.com')"; 
+('2021-05-21','Tout est fonctionnel !',0,null,1,'monteur@cldl.com'),
+('2021-04-13','Le processeur surchauffe beaucoup trop pour les jeux recents !',1,null,4,'monteur@cldl.com'),
+('2021-04-14','Merci pour votre retour, nous allons revoir la conception de ce modèle.',0,'concepteur@cldl.com',1,null),
+('2021-08-17','Très puissant, tout les jeux tournent parfaitement en 240 fps constant',0,null,2,'monteur@cldl.com'),
+('2021-09-18','Prise en main très agreable, très léger comme prévu rien a redire !',0,null,6,'monteur@cldl.com'),
+('2021-07-11','Le pc est actuellement HS, je l ai utilisé en plein soleil',1,null,7,'monteur@cldl.com'),
+('2021-07-12','Merci pour votre retour, Actuellement le pc peut resister jusqu à 50 degrès si vous depassez ce seuil cela est normal qu il disfonctionne !',0,'concepteur@cldl.com',1,null),    
+('2021-09-21','Jamais vu un pc pareil jai chercher tout les defauts possibles il n en a aucun cest affolant !',0,null,3,'monteur@cldl.com'),
+('2021-02-21','Tout est opperationnel !',0,null,8,'monteur@cldl.com')";
 
 $count = $connection->exec($commentaire);
