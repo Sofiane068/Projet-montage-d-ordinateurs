@@ -76,7 +76,6 @@ $modele = "INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archi
 
 $count = $connection->exec($modele);
 
-<<<<<<< HEAD
 
 $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseMail,idModele_,adresseMail_1) VALUES 
 ('2021-05-21','Tout est fonctionnel !',0,null,1,'monteur@cldl.com'),
@@ -90,7 +89,6 @@ $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseM
 ('2021-02-21','Tout est opperationnel !',0,null,8,'monteur@cldl.com')";
 
 $count = $connection->exec($commentaire);
-=======
 ///////////////////////////////////////
 
 $statement = $connection->query("select * from pieces where categorie = 'alimentation'");
@@ -209,4 +207,3 @@ foreach ($sourisPads as $sourisPad) {
 }
 
 $count = $connection->exec($sourisPad);
->>>>>>> 13c23cf (maj piece)
