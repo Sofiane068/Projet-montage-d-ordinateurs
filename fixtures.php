@@ -2,7 +2,7 @@
 
 require_once 'includes/db.php';
 
-$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE concepteur; TRUNCATE monteur; TRUNCATE commentaire; TRUNCATE modele; TRUNCATE alimentation; TRUNCATE carte_graphique; TRUNCATE carte_mere;TRUNCATE clavier;TRUNCATE disque_dur__ssd; TRUNCATE ecran; TRUNCATE memoire_vive;TRUNCATE processeur;  TRUNCATE souris_pad; SET foreign_key_checks = 1;');
+$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE concepteur; TRUNCATE monteur; TRUNCATE commentaire; TRUNCATE modele; TRUNCATE alimentation; TRUNCATE carte_graphique; TRUNCATE carte_mere;TRUNCATE clavier;TRUNCATE disque_dur__ssd; TRUNCATE ecran; TRUNCATE memoire_vive;TRUNCATE processeur;  TRUNCATE souris_pad; TRUNCATE stock; SET foreign_key_checks = 1;');
 
 $sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('monteur@cldl.com','titi'),('concepteur@cldl.com','toto')";
 
@@ -205,3 +205,15 @@ foreach ($sourisPads as $sourisPad) {
     $count = $connection->exec($sql);
 }
 
+$statement = $connection->query("select * from pieces");
+$stocks = $statement->fetchAll();
+
+foreach ($stocks as $stock) {
+    $id = $stock['idComposant'];
+    $quantite= mt_rand(1, 10);
+    $entreeSortie = mt_rand(0, 1);
+    $int = mt_rand(1611325910,1640183510);
+    $string = date("Y-m-d", $int);
+    $sql = "INSERT INTO stock (quantite,entree_sortie,createdDate,idComposant) VALUES ($quantite,$entreeSortie,'$string',$id)";
+    $count = $connection->exec($sql);
+}
