@@ -33,7 +33,7 @@ if (isset($_POST['email']) && isset($_POST['key'])) {
                     <form role="form" action="" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">
                             <label for="email" class="sr-only">Adresse mail </label>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="idconcepteur@cldl.com">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="ex: concepteur@cldl.com">
                         </div>
                         <div class="form-group">
                             <label for="key" class="sr-only">Mot de passe </label>
