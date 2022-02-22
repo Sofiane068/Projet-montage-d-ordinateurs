@@ -19,3 +19,11 @@ require_once 'fixtures.php';
 </head>
 
 <body>
+    <?php if (isset($_SESSION['email'])) { ?>
+        <nav class="nav nav-pills nav-fill">
+
+            <a class="nav-item nav-link disabled" href="#">CLDL</a>
+            <a class="nav-item nav-link"></a>
+            <a class="nav-item nav-link active" href="?page=logout">Deconnexion</a>
+        </nav>
+    <?php }; ?>

@@ -4,7 +4,6 @@
 $sth = $connection->prepare("SELECT * FROM utilisateur WHERE adresseMail = :id AND motDePasse = :mp");
 if (isset($_POST['email']) && isset($_POST['key'])) {
     $_SESSION['email'] = $_POST['email'];
-    var_dump($_SESSION);
     $sth->bindValue(':id', $_SESSION['email']);
     $sth->bindValue(':mp', $_POST['key']);
     $sth->setFetchMode(PDO::FETCH_CLASS, Utilisateur::class);
@@ -15,9 +14,9 @@ if (isset($_POST['email']) && isset($_POST['key'])) {
     if ($utilisateur == null) { ?> <div class="alert alert-danger" role="alert">information saisie invalide</div>
 <?php
     } elseif ($utilisateur->getAddresseMail() == 'concepteur@cldl.com' && $utilisateur !== null) {
-        header("Location: concepteur.php");
+        header("Location: ?page=concepteur");
     } elseif ($utilisateur->getAddresseMail() == 'monteur@cldl.com' && $utilisateur !== null) {
-        header("Location: monteur.php");
+        header("Location: ?page=monteur");
     }
 }
 
