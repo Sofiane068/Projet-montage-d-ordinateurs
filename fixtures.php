@@ -2,7 +2,7 @@
 
 require_once 'includes/db.php';
 
-$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE concepteur; TRUNCATE monteur; TRUNCATE commentaire; TRUNCATE modele; SET foreign_key_checks = 1;');
+$connection->exec('SET foreign_key_checks = 0;TRUNCATE pieces; TRUNCATE utilisateur; TRUNCATE concepteur; TRUNCATE monteur; TRUNCATE commentaire; TRUNCATE modele; TRUNCATE alimentation; TRUNCATE carte_graphique; TRUNCATE carte_mere;TRUNCATE clavier;TRUNCATE disque_dur__ssd; TRUNCATE ecran; TRUNCATE memoire_vive;TRUNCATE processeur;  TRUNCATE souris_pad; SET foreign_key_checks = 1;');
 
 $sql = "INSERT INTO utilisateur (adresseMail,motDePasse) VALUES ('monteur@cldl.com','titi'),('concepteur@cldl.com','toto')";
 
@@ -76,7 +76,6 @@ $modele = "INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archi
 
 $count = $connection->exec($modele);
 
-<<<<<<< HEAD
 
 $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseMail,idModele_,adresseMail_1) VALUES 
 ('2021-05-21','Tout est fonctionnel !',0,null,1,'monteur@cldl.com'),
@@ -90,19 +89,18 @@ $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseM
 ('2021-02-21','Tout est opperationnel !',0,null,8,'monteur@cldl.com')";
 
 $count = $connection->exec($commentaire);
-=======
 ///////////////////////////////////////
 
 $statement = $connection->query("select * from pieces where categorie = 'alimentation'");
 $alimentations = $statement->fetchAll();
 
 foreach ($alimentations as $alimentation) {
-    $id = $alimentation['idcomposant'];
-    $sql = "INSERT INTO Alimentation (idComposant, puissance) VALUES ($id, 550)";
+    $id = $alimentation['idComposant'];
+    $sql = "INSERT INTO alimentation (idComposant, puissance) VALUES ($id, 550)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($alimentation);
+
 
 
 //////////////////////////////
@@ -112,11 +110,11 @@ $carteGraphiques = $statement->fetchAll();
 
 foreach ($carteGraphiques as $carteGraphique) {
     $id = $carteGraphique['idComposant'];
-    $sql = "INSERT INTO CarteGraphique (idComposant, memoire, chipset) VALUES ($id, 2.5,0)";
+    $sql = "INSERT INTO carte_graphique (idComposant, memoire, chipset) VALUES ($id, 2.5,0)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($carteGraphique);
+
 
 /////////////////////////////////
 
@@ -125,11 +123,11 @@ $carteMeres = $statement->fetchAll();
 
 foreach ($carteMeres as $carteMere) {
     $id = $carteMere['idComposant'];
-    $sql = "INSERT INTO carteMere (idComposant, socket, format) VALUES ($id, 0,'format test')";
+    $sql = "INSERT INTO carte_mere (idComposant, socket___chipset, format_) VALUES ($id, 0,'format test')";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($carteMere);
+
 
 ////////////////////////////////////
 
@@ -142,20 +140,20 @@ foreach ($claviers as $clavier) {
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($clavier);
+
 
 /////////////////////////////////////////////
 
-$statement = $connection->query("select * from pieces where categorie = 'DisqueDurSsd'");
+$statement = $connection->query("select * from pieces where categorie = 'disque dur/ssd'");
 $disqueDurSsds = $statement->fetchAll();
 
 foreach ($disqueDurSsds as $disqueDurSsd) {
     $id = $disqueDurSsd['idComposant'];
-    $sql = "INSERT INTO disqueDurSsd (idComposant, capacite,ssd) VALUES ($id, 'capacite test',0)";
+    $sql = "INSERT INTO disque_dur__ssd (idComposant, capacite,ssd) VALUES ($id, 250,0)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($disqueDurSsd);
+
 
 ////////////////////////////
 
@@ -165,11 +163,11 @@ $ecrans = $statement->fetchAll();
 
 foreach ($ecrans as $ecran) {
     $id = $ecran['idComposant'];
-    $sql = "INSERT INTO memoireVive(idComposant, taille ) VALUES ($id, 24)";
+    $sql = "INSERT INTO ecran (idComposant, taille ) VALUES ($id, 24)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($ecran);
+
 
 /////////////////////////////////////
 
@@ -178,35 +176,32 @@ $memoirevives = $statement->fetchAll();
 
 foreach ($memoirevives as $memoirevive) {
     $id = $memoirevive['idComposant'];
-    $sql = "INSERT INTO memoireVive(idComposant, capacite, nombreDeBarettes, typeFrequenceNormeMemoire ) VALUES ($id, 2.4,2,2.7)";
+    $sql = "INSERT INTO memoire_vive (idComposant,capacite,nombre_de_barrettes,type__frequence___norme_memoire) VALUES ($id, 2.4,2,2.7)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($memoirevive);
 
 /////////////////////
 
-$statement = $connection->query("select * from pieces where categorie = 'Processeur'");
+$statement = $connection->query("select * from pieces where categorie = 'processeur'");
 $processeurs = $statement->fetchAll();
 
 foreach ($processeurs as $processeur) {
     $id = $processeur['idComposant'];
-    $sql = "INSERT INTO processeur(idComposant, nombreDeCoeur, chipsetCompatible, frequenceCPU ) VALUES ($id, 2.5, 0,2.5)";
+    $sql = "INSERT INTO processeur (idComposant,nombre_de_coeur,chipsets_compatibles,frequence_CPU_) VALUES ($id, 2.5, 0,2.5)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($processeur);
+
 
 ////////////////////////////
 
-$statement = $connection->query("select * from pieces where categorie = 'Souris Pad'");
+$statement = $connection->query("select * from pieces where categorie = 'souris'");
 $sourisPads = $statement->fetchAll();
 
 foreach ($sourisPads as $sourisPad) {
     $id = $sourisPad['idComposant'];
-    $sql = "INSERT INTO sourisPad(idComposant, sansFil, nombreDeTouches ) VALUES ($id, 0,26)";
+    $sql = "INSERT INTO souris_pad (idComposant,sansFil,nbTouche) VALUES ($id, 0,26)";
     $count = $connection->exec($sql);
 }
 
-$count = $connection->exec($sourisPad);
->>>>>>> 13c23cf (maj piece)
