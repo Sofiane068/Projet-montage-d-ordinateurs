@@ -61,6 +61,7 @@ $piece = "INSERT INTO pieces (nom,prix,categorie,marque,quantite,nbDeModeleCreer
 
 $count = $connection->exec($piece);
 
+
 $modele = "INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archive,quantite) VALUES 
 
 (1,'Asus Monster','Le Asus Monster est le fruit de l\'association entre AMD et Asus. Il embarque les processeur et GPU les plus performants d\'AMD dans un châssis qui a fait ses preuves',5,1,20),
@@ -75,6 +76,7 @@ $modele = "INSERT INTO modele (pcPortable,nom,description,nombreExemplaire,archi
 
 $count = $connection->exec($modele);
 
+<<<<<<< HEAD
 
 $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseMail,idModele_,adresseMail_1) VALUES 
 ('2021-05-21','Tout est fonctionnel !',0,null,1,'monteur@cldl.com'),
@@ -88,3 +90,123 @@ $commentaire = "INSERT INTO commentaire (dateCommentaire,texte,repondue,adresseM
 ('2021-02-21','Tout est opperationnel !',0,null,8,'monteur@cldl.com')";
 
 $count = $connection->exec($commentaire);
+=======
+///////////////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'alimentation'");
+$alimentations = $statement->fetchAll();
+
+foreach ($alimentations as $alimentation) {
+    $id = $alimentation['idcomposant'];
+    $sql = "INSERT INTO Alimentation (idComposant, puissance) VALUES ($id, 550)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($alimentation);
+
+
+//////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'carte graphique'");
+$carteGraphiques = $statement->fetchAll();
+
+foreach ($carteGraphiques as $carteGraphique) {
+    $id = $carteGraphique['idComposant'];
+    $sql = "INSERT INTO CarteGraphique (idComposant, memoire, chipset) VALUES ($id, 2.5,0)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($carteGraphique);
+
+/////////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'carte mère'");
+$carteMeres = $statement->fetchAll();
+
+foreach ($carteMeres as $carteMere) {
+    $id = $carteMere['idComposant'];
+    $sql = "INSERT INTO carteMere (idComposant, socket, format) VALUES ($id, 0,'format test')";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($carteMere);
+
+////////////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'clavier'");
+$claviers = $statement->fetchAll();
+
+foreach ($claviers as $clavier) {
+    $id = $clavier['idComposant'];
+    $sql = "INSERT INTO clavier (idComposant, sansFil, paveNum, typeTouche ) VALUES ($id, 0,0,'typeTouche test')";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($clavier);
+
+/////////////////////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'DisqueDurSsd'");
+$disqueDurSsds = $statement->fetchAll();
+
+foreach ($disqueDurSsds as $disqueDurSsd) {
+    $id = $disqueDurSsd['idComposant'];
+    $sql = "INSERT INTO disqueDurSsd (idComposant, capacite,ssd) VALUES ($id, 'capacite test',0)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($disqueDurSsd);
+
+////////////////////////////
+
+
+$statement = $connection->query("select * from pieces where categorie = 'ecran'");
+$ecrans = $statement->fetchAll();
+
+foreach ($ecrans as $ecran) {
+    $id = $ecran['idComposant'];
+    $sql = "INSERT INTO memoireVive(idComposant, taille ) VALUES ($id, 24)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($ecran);
+
+/////////////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'memoire vive'");
+$memoirevives = $statement->fetchAll();
+
+foreach ($memoirevives as $memoirevive) {
+    $id = $memoirevive['idComposant'];
+    $sql = "INSERT INTO memoireVive(idComposant, capacite, nombreDeBarettes, typeFrequenceNormeMemoire ) VALUES ($id, 2.4,2,2.7)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($memoirevive);
+
+/////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'Processeur'");
+$processeurs = $statement->fetchAll();
+
+foreach ($processeurs as $processeur) {
+    $id = $processeur['idComposant'];
+    $sql = "INSERT INTO processeur(idComposant, nombreDeCoeur, chipsetCompatible, frequenceCPU ) VALUES ($id, 2.5, 0,2.5)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($processeur);
+
+////////////////////////////
+
+$statement = $connection->query("select * from pieces where categorie = 'Souris Pad'");
+$sourisPads = $statement->fetchAll();
+
+foreach ($sourisPads as $sourisPad) {
+    $id = $sourisPad['idComposant'];
+    $sql = "INSERT INTO sourisPad(idComposant, sansFil, nombreDeTouches ) VALUES ($id, 0,26)";
+    $count = $connection->exec($sql);
+}
+
+$count = $connection->exec($sourisPad);
+>>>>>>> 13c23cf (maj piece)
