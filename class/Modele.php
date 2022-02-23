@@ -7,14 +7,26 @@ class Modele {
     protected ?bool $archive;
     protected ?int $quantite;
 
-public function __construct(bool $pcPortable, string $nom, string $description, int $nombreExemplaire, bool $archive, int $quantite) 
+public function __construct(bool $pcPortable=false, string $nom="", string $description="", int $nombreExemplaire="", bool $archive=false, int $quantite="") 
     {
+        if(!empty($pcPortable)){
         $this->pcPortable = $pcPortable;
+        }
+        if (!empty($nom)) {
         $this->nom = $nom;
+        }
+        if (!empty($description)) {
         $this->description = $description;
+        }
+        if (!empty($nombreExemplaire)) {
         $this->nombreExemplaire = $nombreExemplaire;
+        }
+        if (!empty($archive)) {
         $this->archive = $archive;
+        }
+        if (!empty($quantite)) {
         $this->quantite = $quantite;
+        }
     }
 
 /////////////////////////////////////////////

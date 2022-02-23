@@ -1,23 +1,23 @@
 <?php
 class Commentaire{
-   protected DateTime $date;
+   protected DateTime $dateCommentaire;
    protected string $texte;
-   protected bool $reponse;
+   protected bool $repondue;
 
-public function __construct(DateTime $date, string $texte, bool $reponse) 
+public function __construct(DateTime $dateCommentaire, string $texte, bool $repondue) 
     {
-        $this->date = $date;
+        $this->dateCommentaire = $dateCommentaire;
         $this->texte = $texte;
-        $this->reponse = $reponse;
+        $this->repondue = $repondue;
 
     }
 ///////////
 public function getdate(){
-    return $this->date;
+    return $this->dateCommentaire;
 }
 
-public function setdate(DateTime $date){
-$this->date= $date;
+public function setdate(DateTime $dateCommentaire){
+$this->dateCommentaire= $dateCommentaire;
 return $this;
 }
 
@@ -35,11 +35,11 @@ return $this;
 
 
 public function getreponse(){
-    return $this->reponse;
+    return $this->repondue;
 }
 
-public function setreponse(bool $reponse){
-$this->reponse= $reponse;
+public function setreponse(bool $repondue){
+$this->repondue= $repondue;
 return $this;
 }
 

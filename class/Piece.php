@@ -10,7 +10,7 @@ abstract class Piece
    protected ?float $quantite;
    protected ?float $nbDeModeleCreer;
    protected ?DateTime $dateAjout;
-   protected ?bool $compatiblePortable;
+   protected ?bool $compatiblePortable_;
 
    /**
     * Get the value of nom
@@ -117,7 +117,7 @@ abstract class Piece
     */ 
    public function getNdDeModeleCree()
    {
-      return $this->ndDeModeleCree;
+      return $this->nbDeModeleCreer;
    }
 
    /**
@@ -157,7 +157,7 @@ abstract class Piece
     */ 
    public function getCompatiblePortable()
    {
-      return $this->compatiblePortable;
+      return $this->compatiblePortable_;
    }
 
    /**
@@ -165,9 +165,9 @@ abstract class Piece
     *
     * @return  self
     */ 
-   public function setCompatiblePortable(bool $compatiblePortable)
+   public function setCompatiblePortable(bool $compatiblePortable_)
    {
-      $this->compatiblePortable = $compatiblePortable;
+      $this->compatiblePortable_= $compatiblePortable_;
 
       return $this;
    }
