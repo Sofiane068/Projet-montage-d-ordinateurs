@@ -1,9 +1,9 @@
 <?php
-include_once 'identifiant_db';
+include_once 'identifiant_db.php';
 
 try {
    
-    $connection = new PDO($dsn, $user, $password, [
+    $connection = new PDO($dsn, $dbUser, $dbPassword, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
