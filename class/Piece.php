@@ -8,7 +8,7 @@ abstract class Piece
    protected ?string $categorie;
    protected ?string $marque;
    protected ?float $quantite;
-   protected ?float $ndDeModeleCree;
+   protected ?float $nbDeModeleCreer;
    protected ?DateTime $dateAjout;
    protected ?bool $compatiblePortable;
 
@@ -125,9 +125,9 @@ abstract class Piece
     *
     * @return  self
     */ 
-   public function setNdDeModeleCree(float $ndDeModeleCree)
+   public function setNdDeModeleCree(float $nbDeModeleCreer)
    {
-      $this->ndDeModeleCree = $ndDeModeleCree;
+      $this->nbDeModeleCreer = $nbDeModeleCreer;
 
       return $this;
    }
