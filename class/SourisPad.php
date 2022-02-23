@@ -1,7 +1,7 @@
 <?php
 class SourisPad extends Piece {
     protected ?bool $sansFil;
-    protected ?int $nombreDeTouches;
+    protected ?int $nbTouche;
 
     /**
      * Get the value of sansFil
@@ -28,7 +28,7 @@ class SourisPad extends Piece {
      */ 
     public function getNombreDeTouches()
     {
-        return $this->nombreDeTouches;
+        return $this->nbTouche;
     }
 
     /**
@@ -36,9 +36,9 @@ class SourisPad extends Piece {
      *
      * @return  self
      */ 
-    public function setNombreDeTouches(int $nombreDeTouches)
+    public function setNombreDeTouches(int $nbTouche)
     {
-        $this->nombreDeTouches = $nombreDeTouches;
+        $this->nbTouche = $nbTouche;
 
         return $this;
     }
