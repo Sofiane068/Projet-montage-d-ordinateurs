@@ -1,15 +1,15 @@
 <?php
 class Processeur extends Piece {
-   protected ?float $nombreDeCoeur;
-   protected ?bool $chipsetCompatibles;
-   protected ?float $frequenceCPU;
+   protected ?float $nombre_de_coeur;
+   protected ?bool $chipsets_compatibles;
+   protected ?float $frequence_CPU_;
 
    /**
     * Get the value of nombreDeCoeur
     */ 
    public function getNombreDeCoeur()
    {
-      return $this->nombreDeCoeur;
+      return $this->nombre_de_coeur;
    }
 
    /**
@@ -17,9 +17,9 @@ class Processeur extends Piece {
     *
     * @return  self
     */ 
-   public function setNombreDeCoeur(float $nombreDeCoeur)
+   public function setNombreDeCoeur(float $nombre_de_coeur)
    {
-      $this->nombreDeCoeur = $nombreDeCoeur;
+      $this->nombre_de_coeur= $nombre_de_coeur;
 
       return $this;
    }
@@ -29,7 +29,7 @@ class Processeur extends Piece {
     */ 
    public function getChipsetCompatibles()
    {
-      return $this->chipsetCompatibles;
+      return $this->chipsets_compatibles;
    }
 
    /**
@@ -37,9 +37,9 @@ class Processeur extends Piece {
     *
     * @return  self
     */ 
-   public function setChipsetCompatibles(bool $chipsetCompatibles)
+   public function setChipsetCompatibles(bool $chipsets_compatibles)
    {
-      $this->chipsetCompatibles = $chipsetCompatibles;
+      $this->chipsets_compatibles = $chipsets_compatibles;
 
       return $this;
    }
@@ -49,7 +49,7 @@ class Processeur extends Piece {
     */ 
    public function getFrequenceCPU()
    {
-      return $this->frequenceCPU;
+      return $this->frequence_CPU_;
    }
 
    /**
@@ -57,9 +57,9 @@ class Processeur extends Piece {
     *
     * @return  self
     */ 
-   public function setFrequenceCPU(float $frequenceCPU)
+   public function setFrequenceCPU(float $frequence_CPU_)
    {
-      $this->frequenceCPU = $frequenceCPU;
+      $this->frequence_CPU_= $frequence_CPU_;
 
       return $this;
    }

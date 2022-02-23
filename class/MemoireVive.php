@@ -1,8 +1,8 @@
 <?php
 class Memoirevive extends Piece {
     protected ?float $capacite;
-    protected ?int $nombreDeBarettes;
-    protected ?float $typeFrequenceNormeMemoire;
+    protected ?int $nombre_de_barrettes;
+    protected ?float $type__frequence___norme_memoire;
 
     /**
      * Get the value of capacite
@@ -29,7 +29,7 @@ class Memoirevive extends Piece {
      */ 
     public function getNombreDeBarettes()
     {
-        return $this->nombreDeBarettes;
+        return $this->nombre_de_barrettes;
     }
 
     /**
@@ -37,9 +37,9 @@ class Memoirevive extends Piece {
      *
      * @return  self
      */ 
-    public function setNombreDeBarettes(int $nombreDeBarettes)
+    public function setNombreDeBarettes(int $nombre_de_barrettes)
     {
-        $this->nombreDeBarettes = $nombreDeBarettes;
+        $this->nombre_de_barrettes = $nombre_de_barrettes;
 
         return $this;
     }
@@ -49,7 +49,7 @@ class Memoirevive extends Piece {
      */ 
     public function getTypeFrequenceNormeMemoire()
     {
-        return $this->typeFrequenceNormeMemoire;
+        return $this->type__frequence___norme_memoire;
     }
 
     /**
@@ -57,9 +57,9 @@ class Memoirevive extends Piece {
      *
      * @return  self
      */ 
-    public function setTypeFrequenceNormeMemoire(float $typeFrequenceNormeMemoire)
+    public function setTypeFrequenceNormeMemoire(float $type__frequence___norme_memoire)
     {
-        $this->typeFrequenceNormeMemoire = $typeFrequenceNormeMemoire;
+        $this->type__frequence___norme_memoire = $type__frequence___norme_memoire;
 
         return $this;
     }

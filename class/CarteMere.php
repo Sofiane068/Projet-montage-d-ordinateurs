@@ -2,8 +2,8 @@
 
 <?php
 class Cartemere extends Piece {
-    protected ?bool $socket;
-    protected ?string $format;
+    protected ?bool $socket___chipset;
+    protected ?string $format_;
     
    
 
@@ -12,7 +12,7 @@ class Cartemere extends Piece {
      */ 
     public function getSocket()
     {
-        return $this->socket;
+        return $this->socket___chipset;
     }
 
     /**
@@ -20,9 +20,9 @@ class Cartemere extends Piece {
      *
      * @return  self
      */ 
-    public function setSocket(bool $socket)
+    public function setSocket(bool $socket___chipset)
     {
-        $this->socket = $socket;
+        $this->socket___chipset = $socket___chipset;
 
         return $this;
     }
@@ -32,7 +32,7 @@ class Cartemere extends Piece {
      */ 
     public function getFormat()
     {
-        return $this->format;
+        return $this->format_;
     }
 
     /**
@@ -40,9 +40,9 @@ class Cartemere extends Piece {
      *
      * @return  self
      */ 
-    public function setFormat(string $format)
+    public function setFormat(string $format_)
     {
-        $this->format = $format;
+        $this->format_ = $format_;
 
         return $this;
     }
