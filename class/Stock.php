@@ -1,25 +1,31 @@
 <?php
 class Stock
 {
-    protected DateTime $dateCreation;
+    protected DateTime $createdDate;
     protected int $quantite;
-    protected bool $entreeEtSortie;
+    protected bool $entree_sortie;
 
-    public function __construct(DateTime $dateCreation, int $quantite, bool $entreeEtSortie)
+    public function __construct(DateTime $createdDate="", int $quantite="", bool $entree_sortie=false)
     {
-        $this->dateCreation = $dateCreation;
+        if(!empty($createdDate)){
+        $this->createdDate = $createdDate;
+        }
+        if (!empty($quantite)) {
         $this->quantite = $quantite;
-        $this->entreeEtSortie = $entreeEtSortie;
+        }
+        if (!empty($entree_sortie)) {
+        $this->entree_sortie = $entree_sortie;
+        }
     }
     ///////////
     public function getdateCreation()
     {
-        return $this->dateCreation;
+        return $this->createdDate;
     }
 
-    public function setdateCreation(DateTime $dateCreation)
+    public function setdateCreation(DateTime $createdDate)
     {
-        $this->dateCreation = $dateCreation;
+        $this->createdDate = $createdDate;
         return $this;
     }
 
@@ -40,12 +46,12 @@ class Stock
 
     public function getentreeEtSortie()
     {
-        return $this->entreeEtSortie;
+        return $this->entree_sortie;
     }
 
-    public function setentreeEtSortie(bool $entreeEtSortie)
+    public function setentreeEtSortie(bool $entree_sortie)
     {
-        $this->entreeEtSortie = $entreeEtSortie;
+        $this->entree_sortie = $entree_sortie;
         return $this;
     }
 };
