@@ -7,7 +7,7 @@ class Modele {
     protected ?bool $archive;
     protected ?int $quantite;
 
-public function __construct(bool $pcPortable=false, string $nom="", string $description="", int $nombreExemplaire="", bool $archive=false, int $quantite="") 
+public function __construct(bool $pcPortable=false, string $nom="", string $description="", int $nombreExemplaire=null, bool $archive=false, int $quantite=null) 
     {
         if(!empty($pcPortable)){
         $this->pcPortable = $pcPortable;
