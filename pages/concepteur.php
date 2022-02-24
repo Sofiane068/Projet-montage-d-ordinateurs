@@ -1,4 +1,3 @@
-<p> Bienvenue sur la partie concepteur </p>
 <?php
 
 $sth = $connection->prepare("SELECT * FROM commentaire  ORDER BY dateCommentaire DESC");
@@ -13,6 +12,10 @@ $commentaires = $sth->fetchAll();
 ?>
 
 <div class="container">
+    <div class="row mt-3 ">
+        <h3>Commentaire récent :</h3>
+    </div>
+
     <?php foreach ($commentaires as $key => $commentaire) {
 
         if ($commentaire->getAdresseMail_1() != null) {
@@ -104,4 +107,7 @@ $commentaires = $sth->fetchAll();
             </div>
     <?php }
     }; ?>
+    <div class="row mt-3 ">
+        <h3>modèles :</h3>
+    </div>
 </div>
