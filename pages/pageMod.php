@@ -38,17 +38,20 @@ $modeles = $sth->fetchAll();
                         ?>
                     </p>
 
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" <?php if($modele->getArchive()==true){?> checked disabled<?php }else{?>disabled <?php }?>/>
-                        <label class="form-check-label" for="flexCheckCheckedDisabled">archivé</label>
-                        </div>
+                        
                         <p class="card-text">
                         <?php
                         echo $modele->getQuantite() . " en stock";
                         ?>
                         </p>
             </div>
-                    <a href="#" class="btn btn-primary">Modifier</a>
+         
+                    <a href="#" class="btn btn-primary">Modifier</a>   
+                    <?php if($modele->getArchive()==0){?>
+                      <a href="?page=archiveMod&id=<?= $modele->idModele_;?>&archive=<?= $modele->getArchive();?>" class="btn btn-primary">Archiver</a>
+                      <?php }elseif($modele->getArchive()==1){ ?>
+                          <a href="?page=archiveMod&id=<?= $modele->idModele_;?>&archive=<?= $modele->getArchive();?>" class="btn btn-primary">Desarchiver</a>
+                     <?php };?>
     </div> 
 </div>
 <?php
