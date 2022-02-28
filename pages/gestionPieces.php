@@ -73,11 +73,34 @@ $sthPrix = $connection->query($prixSql);
 $prix = $sthPrix->fetchAll();
 
 
-$deleteSql = "DELETE FROM pieces WHERE idComposant = :id";
-$stmt = $pdo->prepare($deleteSql);
-$stmt->execute($data);
+if (isset($_GET['idDelete']) && isset($_GET['table'])) {
 
-$data=$_POST['supprimer'];
+
+    $deleteTableSql = "DELETE FROM " . $_GET['table'] . " WHERE idComposant = :id";
+
+    $stmt = $connection->prepare($deleteTableSql);
+
+    $stmt->execute([
+        ':id' => $_GET['idDelete'],
+    ]);
+
+    $deleteStockSql = "DELETE FROM stock WHERE idComposant = :id";
+
+    $stmt = $connection->prepare($deleteStockSql);
+
+    $stmt->execute([
+        ':id' => $_GET['idDelete'],
+    ]);
+
+    $deletePiecesSql = "DELETE FROM pieces WHERE idComposant = :id";
+
+    $stmt = $connection->prepare($deletePiecesSql);
+
+    $stmt->execute([
+        ':id' => $_GET['idDelete'],
+    ]);
+}
+
 
 ?>
 
@@ -195,10 +218,12 @@ $data=$_POST['supprimer'];
                         <td><?php echo $piece->getNdDeModeleCree(); ?></td>
                         <td><?php echo $piece->getCategorie(); ?></td>
                         <td><?php echo $piece->getDateAjout(); ?></td>
-                        <td><input type="submit" class=" btn btn-danger close" name="supprimer" value="supprimer" <?php if ($piece->getNdDeModeleCree() > 0) {
-                                                                                                                        echo 'disabled';
-                                                                                                                    } ?>>
-                            </input>
+                        <td>
+                            <?php if ($piece->getNdDeModeleCree() > 0) { ?>
+
+                                <a href="?page=gestionPieces&idDelete=<?php echo $piece->idComposant ?>&table=<?php echo $piece->getCategorie(); ?>" class=" btn btn-danger close">Supprimer
+                                </a>
+                            <?php } ?>
                         </td>
                         <td><input type="submit" class=" btn btn-success " name="archiver" value="archiver"> </input>
                         </td>
