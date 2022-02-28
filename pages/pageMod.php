@@ -46,7 +46,8 @@ $modeles = $sth->fetchAll();
                         ?>
                         </p>
             </div>
-         
+                    <a href="?page=deleteMod&id=<?php echo $modele->idModele_;?>" class="btn btn-primary">Supprimer</a>  
+                    
                     <a href="?page=modif&id=<?php echo $modele->idModele_;?>" class="btn btn-primary">Modifier</a>   
                     <?php if($modele->getArchive()==0){?>
                       <a href="?page=archiveMod&id=<?= $modele->idModele_;?>&archive=<?= $modele->getArchive();?>" class="btn btn-primary">Archiver</a>
