@@ -73,6 +73,12 @@ $sthPrix = $connection->query($prixSql);
 $prix = $sthPrix->fetchAll();
 
 
+$deleteSql = "DELETE FROM pieces WHERE idComposant = :id";
+$stmt = $pdo->prepare($deleteSql);
+$stmt->execute($data);
+
+$data=$_POST['supprimer'];
+
 ?>
 
 
@@ -174,6 +180,9 @@ $prix = $sthPrix->fetchAll();
                     <th scope="col">nombre modèles <a href="?page=gestionPieces&tri=nbDeModeleCreer&order=desc"><i class="icon-chevron-sign-down"></i></a> <a href="?page=gestionPieces&tri=nbDeModeleCreer&order=asc"><i class="icon-chevron-sign-up"></i></th>
                     <th scope="col">catégorie <a href="?page=gestionPieces&tri=categorie&order=desc"><i class="icon-chevron-sign-down"></i></a> <a href="?page=gestionPieces&tri=categorie&order=asc"><i class="icon-chevron-sign-up"></i></th>
                     <th scope="col">date d'ajout <a href="?page=gestionPieces&tri=dateAjout&order=desc"><i class="icon-chevron-sign-down"></i></a> <a href="?page=gestionPieces&tri=dateAjout&order=asc"><i class="icon-chevron-sign-up"></i></th>
+                    <th>supprimer</th>
+                    <th>archiver</th>
+                    <th>modifier</th>
                 </tr>
             </thead>
             <tbody>
@@ -186,6 +195,19 @@ $prix = $sthPrix->fetchAll();
                         <td><?php echo $piece->getNdDeModeleCree(); ?></td>
                         <td><?php echo $piece->getCategorie(); ?></td>
                         <td><?php echo $piece->getDateAjout(); ?></td>
+                        <td><input type="submit" class=" btn btn-danger close" name="supprimer" value="supprimer" <?php if ($piece->getNdDeModeleCree() > 0) {
+                                                                                                                        echo 'disabled';
+                                                                                                                    } ?>>
+                            </input>
+                        </td>
+                        <td><input type="submit" class=" btn btn-success " name="archiver" value="archiver"> </input>
+                        </td>
+                        <td>
+                            <input type="button" class=" btn btn-info " name="modifier" value="modifier" <?php if ($piece->getNdDeModeleCree() > 0) {
+                                                                                                                echo 'disabled';
+                                                                                                            } ?>>
+                            </input>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

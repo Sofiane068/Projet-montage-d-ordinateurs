@@ -1,6 +1,7 @@
 
 
 <?php
+
 $sth = $connection->prepare("SELECT * FROM utilisateur WHERE adresseMail = :id AND motDePasse = :mp");
 if (isset($_POST['email']) && isset($_POST['key'])) {
     $_SESSION['email'] = $_POST['email'];
