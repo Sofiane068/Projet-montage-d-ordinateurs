@@ -14,6 +14,7 @@ $modeles = $sth->fetchAll();
     <div class="row mt-3 ">
         <h3>modèles : </h3>
         <h3><a href="?page=concepteur" class="btn btn-primary">Accueil</a></h3>
+        <h3><a href="?page=newMod" class="btn btn-primary">Nouveau modele</a></h3>
     </div>
     <div class="row">
         <?php
@@ -46,7 +47,7 @@ $modeles = $sth->fetchAll();
                         </p>
             </div>
          
-                    <a href="#" class="btn btn-primary">Modifier</a>   
+                    <a href="?page=modif&id=<?php echo $modele->idModele_;?>" class="btn btn-primary">Modifier</a>   
                     <?php if($modele->getArchive()==0){?>
                       <a href="?page=archiveMod&id=<?= $modele->idModele_;?>&archive=<?= $modele->getArchive();?>" class="btn btn-primary">Archiver</a>
                       <?php }elseif($modele->getArchive()==1){ ?>
