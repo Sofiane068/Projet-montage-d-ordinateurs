@@ -145,8 +145,8 @@ class Piece
     * Set the value of dateAjout
     *
     * @return  self
-    */
-   public function setDateAjout(DateTime $dateAjout)
+    */ 
+   public function setDateAjout(string $dateAjout)
    {
       $this->dateAjout = $dateAjout;
 
