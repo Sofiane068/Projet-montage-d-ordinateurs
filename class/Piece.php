@@ -61,6 +61,7 @@ class Piece
       return $this->categorie;
    }
 
+   
    /**
     * Set the value of categorie
     *
