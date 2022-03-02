@@ -42,7 +42,7 @@ $categories = $sthCategorie->fetchAll();
 
 ?>
 
-<div class="container">
+<div class="container"> 
     <form method="post" action="">
         <div class="mb-3">
             <label for="Nom" class="form-label">Nom :</label>
