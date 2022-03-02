@@ -68,16 +68,17 @@ $commentaires = $sth->fetchAll();
                                 </div>
                                 <div class="float-left meta">
                                     <div class="title h5">
-                                        <a href="#"><b><?php if ($key == 4 || $key == 7) {
+                                        <a href="#"><b><?php if ($key == 1|| $key == 7) {
                                                             echo $commentaires[3]->getAdresseMail();
                                                         } ?></b></a>
                                         a commenté
                                     </div>
                                     <h6 class="text-muted time">
-                                        <?php if ($key == 4) {
-                                            echo $commentaires[3]->getdate()->format('d/m/Y');
-                                        } elseif ($key == 7) {
-                                            echo $commentaires[6]->getdate()->format('d/m/Y');
+                                        <?php if ($key == 1) {
+                                            echo $commentaires[2]->getdate()->format('d/m/Y');
+                                        } 
+                                        if ($key == 5) {
+                                            echo $commentaires[5]->getdate()->format('d/m/Y');
                                         } ?>
                                     </h6>
                                 </div>
