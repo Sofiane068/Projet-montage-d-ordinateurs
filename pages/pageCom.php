@@ -9,6 +9,7 @@ $sth->execute();
 $commentaires = $sth->fetchAll();
 
 
+
 ?>
 
 <div class="container">
@@ -68,8 +69,8 @@ $commentaires = $sth->fetchAll();
                                 </div>
                                 <div class="float-left meta">
                                     <div class="title h5">
-                                        <a href="#"><b><?php if ($key == 1|| $key == 7) {
-                                                            echo $commentaires[3]->getAdresseMail();
+                                        <a href="#"><b><?php if ($key == 1|| $key == 4) {
+                                                            echo $commentaires[2]->getAdresseMail();
                                                         } ?></b></a>
                                         a commenté
                                     </div>
@@ -77,7 +78,7 @@ $commentaires = $sth->fetchAll();
                                         <?php if ($key == 1) {
                                             echo $commentaires[2]->getdate()->format('d/m/Y');
                                         } 
-                                        if ($key == 5) {
+                                        if ($key == 4) {
                                             echo $commentaires[5]->getdate()->format('d/m/Y');
                                         } ?>
                                     </h6>
@@ -85,10 +86,10 @@ $commentaires = $sth->fetchAll();
                             </div>
                             <div class="post-description">
                                 <p>
-                                    <?php if ($key == 4) {
-                                        echo $commentaires[3]->gettexte();
-                                    } elseif ($key == 7) {
-                                        echo $commentaires[6]->gettexte();
+                                    <?php if ($key == 1) {
+                                        echo $commentaires[2]->gettexte();
+                                    } elseif ($key == 4) {
+                                        echo $commentaires[5]->gettexte();
                                     } ?>
                                 </p>
 
