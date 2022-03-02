@@ -101,7 +101,19 @@ if (isset($_GET['idDelete']) && isset($_GET['table'])) {
     ]);
 }
 
+if (isset($_GET['archive'])) {
+    $archiveSql = "UPDATE pieces
+SET archive=1
+WHERE archive=:archive";
 
+    $stmt = $connection->prepare($archiveSql);
+
+    $stmt->execute(
+        [
+            ':archive' => $_GET['archive'],
+        ]
+    );
+}
 ?>
 
 
@@ -185,9 +197,9 @@ if (isset($_GET['idDelete']) && isset($_GET['table'])) {
                     <input type="number" id="max" name="prixMax" min="0" max="1399.00" step="0.10">
                     <label for="prixMax">Prix max</label>
                 </div>
+             
 
-
-                <input class="btn btn-primary" type="submit" value="Validez">
+                <input class="btn btn-primary" type="submit" value="Valider">
             </form>
         </div>
 
@@ -225,13 +237,17 @@ if (isset($_GET['idDelete']) && isset($_GET['table'])) {
                                 </a>
                             <?php } ?>
                         </td>
-                        <td><input type="submit" class=" btn btn-success " name="archiver" value="archiver"> </input>
+
+                        <td><?php if ($piece->getNdDeModeleCree() > 0 && $piece->getArchive() == 0) { ?>
+                                <a href="?page=gestionPieces&archive=<?php echo $piece->getArchive(); ?>" class=" btn btn-success "> archiver</a>
+                            <?php }; ?>
                         </td>
                         <td>
-                            <input type="button" class=" btn btn-info " name="modifier" value="modifier" <?php if ($piece->getNdDeModeleCree() > 0) {
-                                                                                                                echo 'disabled';
-                                                                                                            } ?>>
-                            </input>
+                            <a <?php if($piece->getArchive()==0){?>href="?page=modifPiece&id=<?php echo $piece->idComposant ?>"<?php }?> class="btn btn-info" <?php if ($piece->getNdDeModeleCree() > 0) {
+                                                                                                                        echo 'disabled';
+                                                                                                                    } ?>>
+                                Modifier
+                            </a>
                         </td>
                     </tr>
                 <?php } ?>

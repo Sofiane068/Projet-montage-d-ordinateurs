@@ -11,6 +11,7 @@ class Piece
    protected ?float $nbDeModeleCreer;
    protected ?string $dateAjout;
    protected ?bool $compatiblePortable_;
+   protected ?bool $archive;
 
    /**
     * Get the value of nom
@@ -168,6 +169,26 @@ class Piece
    public function setCompatiblePortable(bool $compatiblePortable_)
    {
       $this->compatiblePortable_ = $compatiblePortable_;
+
+      return $this;
+   }
+
+   /**
+    * Get the value of archive
+    */ 
+   public function getArchive()
+   {
+      return $this->archive;
+   }
+
+   /**
+    * Set the value of archive
+    *
+    * @return  self
+    */ 
+   public function setArchive(bool $archive)
+   {
+      $this->archive = $archive;
 
       return $this;
    }

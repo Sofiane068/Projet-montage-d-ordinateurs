@@ -1,6 +1,7 @@
 
 
 <?php
+// require_once '/laragon/www/Projet-montage-d-ordinateurs/fixtures.php';
 
 $sth = $connection->prepare("SELECT * FROM utilisateur WHERE adresseMail = :id AND motDePasse = :mp");
 if (isset($_POST['email']) && isset($_POST['key'])) {
