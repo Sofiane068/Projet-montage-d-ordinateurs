@@ -11,7 +11,7 @@ $modele = $sth->fetch();
 
 //////////
 
-$carteMereSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="carte mère" ';
+$carteMereSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="carte_mere" ';
 $sthcarteMere= $connection->query($carteMereSql);
 $carteMeres = $sthcarteMere->fetchAll();
 
@@ -19,11 +19,11 @@ $processeurSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="p
 $sthProcesseur= $connection->query($processeurSql);
 $processeurs = $sthProcesseur->fetchAll();
 
-$memoireViveSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="memoire vive"';
+$memoireViveSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="memoire_vive"';
 $sthMemoireVive= $connection->query($memoireViveSql);
 $memoireVives = $sthMemoireVive->fetchAll();
 
-$carteGraphiqueSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="carte graphique"';
+$carteGraphiqueSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="carte_graphique"';
 $sthcarteGraphique= $connection->query($carteGraphiqueSql);
 $carteGraphiques = $sthcarteGraphique->fetchAll();
 
@@ -32,14 +32,11 @@ $clavierSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="clav
 $sthClavier= $connection->query($clavierSql);
 $claviers = $sthClavier->fetchAll();
 
-$sourisPadSql = 'SELECT * FROM pieces INNER JOIN souris_pad ON souris_pad.idComposant = pieces.idComposant where categorie="souris"';
+$sourisPadSql = 'SELECT * FROM pieces INNER JOIN souris_pad ON souris_pad.idComposant = pieces.idComposant where categorie="souris_pad"';
 $sthSourisPad= $connection->query($sourisPadSql);
 $sourisPads = $sthSourisPad->fetchAll();
 
 
-$clavierSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="clavier"';
-$sthClavier= $connection->query($clavierSql);
-$claviers = $sthClavier->fetchAll();
 
 $ecranSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="ecran"';
 $sthEcran= $connection->query($ecranSql);
@@ -49,7 +46,7 @@ $alimentationSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie=
 $sthAlimentation= $connection->query($alimentationSql);
 $alimentations = $sthAlimentation->fetchAll();
 
-$disqueDurSsdSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="disque dur/ssd"';
+$disqueDurSsdSql = 'SELECT DISTINCT idComposant,nom FROM pieces where categorie="disque_dur__ssd"';
 $sthdisqueDurSsd= $connection->query($disqueDurSsdSql);
 $disqueDurSsds = $sthdisqueDurSsd->fetchAll();
 
